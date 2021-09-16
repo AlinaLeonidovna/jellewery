@@ -1,0 +1,27 @@
+@mixin text-reset {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+@mixin btn-reset {
+  display: block;
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+@mixin pseudo($content: " ", $position: absolute) {
+  content: $content;
+  position: $position;
+}
