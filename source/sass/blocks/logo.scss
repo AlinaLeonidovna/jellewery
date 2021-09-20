@@ -1,0 +1,24 @@
+.logo {
+  display: block;
+
+  outline: none;
+
+  &[href]:hover,
+  &[href]:focus {
+    svg {
+      fill: $accent-active;
+    }
+  }
+
+  &[href]:active {
+    opacity: 0.5;
+  }
+}
+
+.logo svg {
+  display: block;
+  width: 66px;
+  height: 66px;
+
+  fill: $accent;
+}

@@ -1,0 +1,19 @@
+.page {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  font-family: $main-font;
+  color: $page_text;
+
+  background-color: $page_bg;
+}
