@@ -418,12 +418,26 @@ img {
   color: #1d1613;
   background-color: #ffffff; }
 
-.header {
-  padding-top: 30px; }
+@media (max-width: 1023px) {
+  .header {
+    z-index: 1; }
+    .header--menu-closed {
+      position: static; }
+    .header--menu-opened {
+      overflow-y: scroll;
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background-color: #a87b62; } }
 
 .header__top {
+  padding-top: 30px;
   padding-bottom: 30px;
   border-bottom: 1px solid #f6f5f4; }
+  @media (max-width: 1023px) {
+    .header__top {
+      position: relative;
+      border-bottom: none; } }
 
 .header__wrap {
   display: -webkit-box;
@@ -435,6 +449,11 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
+  @media (max-width: 1023px) {
+    .header__wrap {
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; } }
 
 .header__search {
   position: relative;
@@ -450,6 +469,9 @@ img {
     fill: #a87b62; }
   .header__search:active {
     opacity: 0.5; }
+  @media (max-width: 1023px) {
+    .header__search {
+      display: none; } }
 
 .header__search svg {
   position: absolute;
@@ -495,6 +517,9 @@ img {
           align-items: center;
   width: 430px;
   margin: 0 -15px; }
+  @media (max-width: 1023px) {
+    .header__user {
+      display: none; } }
 
 .header__user a {
   display: block;
@@ -511,6 +536,83 @@ img {
   .header__user a output {
     margin-left: 2px; }
 
+.header__menu-burger {
+  display: none; }
+  @media (max-width: 1023px) {
+    .header__menu-burger {
+      display: block;
+      margin: 0;
+      padding: 0;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      left: 35px;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      width: 45px;
+      height: 40px; }
+      .header__menu-burger--closed::before, .header__menu-burger--opened::before, .header__menu-burger--opened::after {
+        content: " ";
+        position: absolute;
+        top: 19px;
+        left: 10px;
+        width: 25px;
+        height: 2px; }
+      .header__menu-burger--closed::before {
+        background-color: #1d1613;
+        -webkit-box-shadow: 0 -8px #1d1613, 0 8px #1d1613;
+                box-shadow: 0 -8px #1d1613, 0 8px #1d1613; }
+      .header__menu-burger--opened::before, .header__menu-burger--opened::after {
+        background-color: #ffffff; }
+      .header__menu-burger--opened::before {
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg); }
+      .header__menu-burger--opened::after {
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
+      .header__menu-burger--closed:hover::before, .header__menu-burger--closed:focus::before {
+        background-color: #a87b62;
+        -webkit-box-shadow: 0 -8px #a87b62, 0 8px #a87b62;
+                box-shadow: 0 -8px #a87b62, 0 8px #a87b62; }
+      .header__menu-burger--opened:hover::before, .header__menu-burger--opened:hover::after, .header__menu-burger--opened:focus::before, .header__menu-burger--opened:focus::after {
+        background-color: #564034; }
+      .header__menu-burger--closed:active::before, .header__menu-burger--opened:active::before, .header__menu-burger--opened:active::after {
+        opacity: 0.5; } }
+
+.header__login-btn {
+  display: none; }
+  @media (max-width: 1023px) {
+    .header__login-btn {
+      position: absolute;
+      top: 50%;
+      right: 45px;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      display: block;
+      margin-right: -10px;
+      padding: 10px;
+      outline: none; }
+      .header__login-btn:hover svg,
+      .header__login-btn:focus svg {
+        stroke: #a87b62; }
+      .header__login-btn:active svg {
+        opacity: 0.5; }
+      .header--menu-opened .header__login-btn svg {
+        stroke: #ffffff; }
+      .header--menu-opened .header__login-btn:hover svg,
+      .header--menu-opened .header__login-btn:focus svg {
+        stroke: #564034; } }
+
+@media (max-width: 1023px) {
+  .header__login-btn svg {
+    display: block;
+    width: 20px;
+    height: 18px;
+    stroke: #1d1613;
+    stroke-width: 2px; } }
+
 .logo {
   display: block;
   outline: none; }
@@ -518,6 +620,9 @@ img {
     fill: #564034; }
   .logo[href]:active {
     opacity: 0.5; }
+  @media (max-width: 1023px) {
+    .header--menu-opened .logo .header__logo svg {
+      fill: #ffffff; } }
 
 .logo svg {
   display: block;

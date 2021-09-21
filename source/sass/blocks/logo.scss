@@ -13,6 +13,16 @@
   &[href]:active {
     opacity: 0.5;
   }
+
+  @media (max-width: $tablet-width) {
+    .header__logo {
+      .header--menu-opened & {
+        svg {
+          fill: $header_menu-opened;
+        }
+      }
+    }
+  }
 }
 
 .logo svg {
