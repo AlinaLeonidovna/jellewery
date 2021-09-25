@@ -1195,3 +1195,92 @@ img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover; }
+
+.pagination {
+  width: 100%;
+  border-top: 1px solid #f6f5f4; }
+  @media (max-width: 767px) {
+    .pagination {
+      border: none; } }
+
+.pagination__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-left: 315px;
+  padding-top: 36px;
+  padding-bottom: 75px; }
+  @media (max-width: 1023px) {
+    .pagination__container {
+      padding-left: 45px; } }
+  @media (max-width: 767px) {
+    .pagination__container {
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      padding-left: 15px;
+      padding-top: 20px;
+      padding-bottom: 65px; } }
+
+.pagination__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-right: 35px; }
+  @media (max-width: 767px) {
+    .pagination__list {
+      padding-right: 0; } }
+
+.pagination__link {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0 7px;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #a87b62;
+  text-decoration: none; }
+  .pagination__link:hover, .pagination__link:focus {
+    color: #564034; }
+  @media (max-width: 767px) {
+    .pagination__link {
+      padding: 0 12px; } }
+  .pagination__link--active {
+    color: #1d1613;
+    cursor: default; }
+
+.pagination__back-btn,
+.pagination__forward-btn {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #1d1613; }
+  .pagination__back-btn:focus, .pagination__back-btn:hover,
+  .pagination__forward-btn:focus,
+  .pagination__forward-btn:hover {
+    color: #a87b62; }
+  .pagination__back-btn:active,
+  .pagination__forward-btn:active {
+    color: #564034; }
+  @media (max-width: 767px) {
+    .pagination__back-btn,
+    .pagination__forward-btn {
+      display: none; } }

@@ -1,0 +1,93 @@
+.pagination {
+  width: 100%;
+
+  border-top: 1px solid $pagination_border;
+
+  @media (max-width: $mobile-width) {
+    border: none;
+  }
+}
+
+.pagination__container {
+  display: flex;
+  justify-content: space-between;
+
+  padding-left: 315px;
+  padding-top: 36px;
+  padding-bottom: 75px;
+
+
+  @media (max-width: $tablet-width) {
+    padding-left: 45px;
+  }
+
+  @media (max-width: $mobile-width) {
+    justify-content: center;
+
+    padding-left: 15px;
+    padding-top: 20px;
+    padding-bottom: 65px;
+  }
+}
+
+.pagination__list {
+  @include list-reset();
+
+  display: flex;
+  padding-right: 35px;
+
+  @media (max-width: $mobile-width) {
+    padding-right: 0;
+  }
+}
+
+.pagination__link {
+  @include btn-reset();
+  padding: 0 7px;
+
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: $pagination_link;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $pagination_link-hover;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 0 12px;
+  }
+
+  &--active {
+    color: $pagination_link-active;
+
+    cursor: default;
+  }
+}
+
+.pagination__back-btn,
+.pagination__forward-btn {
+  @include btn-reset();
+
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: $pagination_btn;
+
+  &:focus,
+  &:hover {
+    color: $pagination_btn-hover;
+  }
+
+  &:active {
+    color: $pagination_btn-active;
+  }
+
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
+}
