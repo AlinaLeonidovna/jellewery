@@ -4,6 +4,15 @@
   margin: 0 auto;
   padding: 0 15px;
 
+  &--catalog {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+
+    @media (max-width: $tablet-width) {
+      display: block;
+    }
+  }
+
   @media (max-width: $tablet-width) {
     padding: 0 45px;
   }
