@@ -1,6 +1,28 @@
 'use strict';
 
 (function () {
+  // filter
+
+  var filter = document.querySelector('.filter');
+  var filterOpen = document.querySelector('.filter__open-filter-btn');
+  var filterClose = document.querySelector('.filter__close-btn');
+
+  if (filter) {
+    filterOpen.addEventListener('click', function () {
+      if (filter.classList.contains('filter--open')) {
+        filter.classList.remove('filter--open');
+      } else {
+        filter.classList.add('filter--open');
+      }
+    });
+
+    filterClose.addEventListener('click', function (evt) {
+      evt.preventDefault();
+
+      filter.classList.remove('filter--open');
+    });
+  }
+
   // accordion
 
   var accordions = document.querySelectorAll('.accordion');
