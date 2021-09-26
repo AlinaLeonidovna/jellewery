@@ -1,0 +1,260 @@
+.footer {
+  min-height: 338px;
+
+  color: $footer_text;
+
+  background-color: $footer_bg;
+
+  h2 {
+    @include text-reset();
+
+    margin-bottom: 10px;
+
+    font-family: $title-font;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 130%;
+    letter-spacing: 0.02em;
+
+
+    @media (max-width: $mobile-width) {
+      margin-right: 50px;
+      margin-bottom: 14px;
+    }
+  }
+}
+
+.footer__container {
+  display: flex;
+  flex-wrap: wrap;
+
+  padding-top: 62px;
+
+  @media (max-width: $tablet-width) {
+    justify-content: space-between;
+    padding-top: 22px;
+    padding-bottom: 34px;
+  }
+}
+
+.footer__mail-box {
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  margin-right: 15px;
+
+  @media (max-width: $tablet-width) {
+    width: 100%;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-right: 0;
+  }
+}
+
+.footer__mail {
+  max-width: 500px;
+
+  border-bottom: 1px solid $footer_border;
+
+  @media (max-width: $tablet-width) {
+    max-width: 561px;
+  }
+
+  & label {
+    display: block;
+    margin-bottom: 34px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 130%;
+    color: $footer_label;
+
+    @media (max-width: $mobile-width) {
+      margin-right: 50px;
+    }
+  }
+
+  & input {
+    width: calc(100% - 110px);
+    padding: 10px 0 8px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.06em;
+    color: $footer_label;
+
+    background-color: transparent;
+    border: none;
+
+    &::placeholder {
+      color: $footer_label;
+    }
+  }
+
+  & button {
+    height: 24px;
+    padding: 0 0 0 3px;
+
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: center;
+    color: $footer_text;
+
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      color: $footer_text-hover;
+    }
+
+    & svg {
+      margin-left: 7px;
+    }
+  }
+}
+
+.footer__menu {
+  flex-grow: 1;
+
+  margin-right: 5px;
+  padding-top: 34px;
+
+  @media (max-width: $tablet-width) {
+    flex-grow: 0;
+
+    padding-top: 46px;
+  }
+}
+
+.footer__menu-list {
+  @include list-reset();
+
+  padding-left: 75px;
+
+  column-count: 2;
+
+  @media (max-width: $tablet-width) {
+    padding-left: 0;
+  }
+
+  @media (max-width: $mobile-width) {
+    column-count: auto;
+  }
+
+  & li {
+    margin-bottom: 21px;
+
+    @media (max-width: $tablet-width) {
+      &:first-child {
+        margin-right: 75px;
+      }
+    }
+
+    @media (max-width: $mobile-width) {
+      &:nth-child(4n) {
+        margin-bottom: 41px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.footer__link {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  color: $footer_text;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $footer_text-hover;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.footer__social-list {
+  @include list-reset();
+
+  min-width: 120px;
+  padding-top: 34px;
+
+  @media (max-width: $tablet-width) {
+    position: relative;
+    left: -105px;
+
+    padding-top: 46px;
+  }
+
+  @media (max-width: $mobile-width) {
+    left: -10px;
+
+    display: flex;
+    padding-top: 42px;
+  }
+
+  & li {
+    margin-bottom: 21px;
+  }
+}
+
+.footer__social-link {
+  position: relative;
+
+  padding-left: 35px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  color: $footer_text;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $footer_text-hover;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  @media (max-width: $mobile-width) {
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin-right: 24px;
+    padding-left: 0;
+
+    & span {
+      display: none;
+    }
+  }
+
+  & svg {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+
+    @media (max-width: $mobile-width) {
+      width: 21px;
+      height: 21px;
+    }
+  }
+}
