@@ -3,7 +3,6 @@
 (function () {
 
   // menu
-
   var page = document.querySelector('.page');
   var header = page.querySelector('.header');
   var menuToggle = header.querySelector('.header__menu-toggle');
