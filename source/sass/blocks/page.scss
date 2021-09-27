@@ -16,4 +16,8 @@
   color: $page_text;
 
   background-color: $page_bg;
+
+  &--no-scroll {
+    overflow: hidden;
+  }
 }

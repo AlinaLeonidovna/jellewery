@@ -25,24 +25,35 @@ $accent: #a87b62;
 $accent-active: #564034;
 
 // Function variables for colors
-
 $page_text: $black-light;
 $page_bg: $white;
 
 $header_border: $grey-light;
 $header_search-icon: $black;
 $header_search-icon-hover: $accent;
-// $header_search-border-hover: $accent;
+$header_search-border-hover: $accent;
 $header_user-link: $black-light;
 $header_user-link-hover: $accent;
 $header_menu-closed: $black-light;
 $header_menu-closed-hover: $accent;
-$header_menu-opened: $white;
+$header_menu-opened: $accent;
 $header_menu-opened-hover: $accent-active;
 
 $navigation_link: $black-light;
+$navigation_link-secondary: rgba($black-light, 0.75);
 $navigation_link-hover: $accent;
 $navigation_menu-opened-bg: $accent;
+$navigation_search-text: $black-light;
+$navigation_search-border: $black-light;
+$navigation_search-hover: $accent;
+$navigation_search-menu-opened-txt: $white;
+$navigation_search-menu-opened-bg: rgba($white, 0.15);
+$navigation_search-menu-opened-icon: $white;
+$navigation_search-menu-opened-hover: $white;
+$navigation-menu-opened-link: $white;
+$navigation-menu-opened-link-hover: $accent-active;
+$navigation_menu-opened-link-secondary: rgba($white, 0.75);
+$navigation_menu-opened-link-hover: $accent-active;
 
 $promo_bg: rgba($accent-active, 0.7);
 $promo_bg-img: $accent;

@@ -14,21 +14,30 @@
     opacity: 0.5;
   }
 
+  svg {
+    display: block;
+    width: 66px;
+    height: 66px;
+
+    fill: $accent;
+  }
+
   @media (max-width: $tablet-width) {
     .header__logo {
       .header--menu-opened & {
         svg {
-          fill: $header_menu-opened;
+          fill: $white;
         }
       }
     }
   }
-}
 
-.logo svg {
-  display: block;
-  width: 66px;
-  height: 66px;
-
-  fill: $accent;
+  @media (max-width: $mobile-width) {
+    .logo {
+      svg {
+        width: 52px;
+        height: 52px;
+      }
+    }
+  }
 }
