@@ -2086,3 +2086,165 @@ img {
       .footer__social-link svg {
         width: 21px;
         height: 21px; } }
+
+.popup-login {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding-top: 43px;
+  display: none; }
+  @media (max-width: 767px) {
+    .popup-login {
+      padding-top: 50px;
+      padding-left: 25px;
+      padding-right: 25px; } }
+  .popup-login--open {
+    display: block; }
+  .popup-login--page {
+    position: static;
+    padding: 0;
+    background-color: #f0eae4; }
+    .popup-login--page .popup-login__wrapper {
+      min-height: 450px;
+      padding-top: 40px;
+      -webkit-box-shadow: none;
+              box-shadow: none;
+      background-image: none; }
+    .popup-login--page .popup-login__close-btn {
+      display: none; }
+
+.popup-login__wrapper {
+  position: relative;
+  max-width: 430px;
+  min-height: 586px;
+  margin: auto;
+  padding: 188px 45px 20px;
+  background-color: #f0eae4;
+  background-image: url("../img/bg-login@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100% auto;
+  color: #000000;
+  -webkit-box-shadow: 0 4px 32px rgba(121, 121, 121, 0.24);
+          box-shadow: 0 4px 32px rgba(121, 121, 121, 0.24); }
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+    .popup-login__wrapper {
+      background-image: url("../img/bg-login@2x.jpg"); } }
+  @media (max-width: 767px) {
+    .popup-login__wrapper {
+      max-width: 350px;
+      min-height: 470px;
+      padding: 121px 15px 20px; } }
+
+.popup-login__title {
+  margin: 0;
+  margin-bottom: 25px;
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 34px;
+  line-height: 130%;
+  text-align: center;
+  color: #000000; }
+  @media (max-width: 767px) {
+    .popup-login__title {
+      font-size: 24px;
+      margin-bottom: 19px; } }
+
+.popup-login__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .popup-login__form input {
+    padding: 8px 0;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #000000; }
+    .popup-login__form input::-webkit-input-placeholder {
+      color: #9b9997; }
+    .popup-login__form input::-moz-placeholder {
+      color: #9b9997; }
+    .popup-login__form input:-ms-input-placeholder {
+      color: #9b9997; }
+    .popup-login__form input::-ms-input-placeholder {
+      color: #9b9997; }
+    .popup-login__form input::placeholder {
+      color: #9b9997; }
+    .popup-login__form input:first-of-type {
+      margin-bottom: 27px; }
+      @media (max-width: 767px) {
+        .popup-login__form input:first-of-type {
+          margin-bottom: 22px; } }
+
+.popup-login__forgot-link {
+  margin-top: 5px;
+  margin-bottom: 45px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  font-size: 12px;
+  line-height: 18px;
+  color: #9b9997;
+  text-decoration: none; }
+  .popup-login__forgot-link:hover, .popup-login__forgot-link:focus {
+    color: #a87b62; }
+  @media (max-width: 767px) {
+    .popup-login__forgot-link {
+      margin-bottom: 35px; } }
+
+.popup-login__button {
+  height: 68px;
+  margin-bottom: 15px;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+  background-color: #a87b62;
+  cursor: pointer; }
+  .popup-login__button:hover, .popup-login__button:focus {
+    color: #a87b62;
+    border: 1px solid #a87b62;
+    background-color: transparent; }
+
+.popup-login__sign-up {
+  font-size: 14px;
+  line-height: 21px;
+  color: #9b9997;
+  text-align: center; }
+
+.popup-login__sign-up-link {
+  margin: 0 5px;
+  color: #000000;
+  text-decoration: none; }
+  .popup-login__sign-up-link:focus, .popup-login__sign-up-link:hover {
+    color: #a87b62; }
+  @media (max-width: 767px) {
+    .popup-login__sign-up-link {
+      margin: 0; } }
+
+.popup-login__close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer; }
+  @media (max-width: 767px) {
+    .popup-login__close-btn {
+      top: 15px;
+      right: 15px; } }

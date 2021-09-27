@@ -80,6 +80,94 @@
 
   menuToggle.addEventListener('click', onToggleMenuClick);
 
+  // popup login
+
+  var body = document.querySelector('.page');
+  var loginLinks = document.querySelectorAll('.link-login');
+  var popupLogin = document.querySelector('.popup-login');
+
+  if (popupLogin) {
+    var popupBox = popupLogin.querySelector('.popup-login__wrapper');
+    var closeLogin = popupLogin.querySelector('.popup-login__close-btn');
+
+    var popupForm = popupLogin.querySelector('.popup-login__form');
+    var popupEmail = popupLogin.querySelector('#email-popup');
+    var popupPassword = popupLogin.querySelector('#password');
+
+    var isStorageSupport = true;
+    var storageEmail = '';
+
+    try {
+      storageEmail = localStorage.getItem('email');
+    } catch (err) {
+      isStorageSupport = false;
+    }
+
+    var openPopup = function (link, currentPopup) {
+      link.addEventListener('click', function (evt) {
+        evt.preventDefault();
+        currentPopup.classList.add('popup-login--open');
+        body.classList.add('page--no-scroll');
+
+        popupEmail.focus();
+
+        if (storageEmail) {
+          popupEmail.value = storageEmail;
+        }
+      });
+    };
+
+    for (var h = 0; h < loginLinks.length; h++) {
+      openPopup(loginLinks[h], popupLogin);
+    }
+
+    closeLogin.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      popupLogin.classList.remove('popup-login--open');
+
+      if (header.classList.contains('page-header--close-menu')) {
+        body.classList.remove('page--no-scroll');
+      }
+    });
+
+    popupForm.addEventListener('submit', function (evt) {
+      if (!popupEmail.value || !popupPassword.value) {
+        evt.preventDefault();
+      } else {
+        if (isStorageSupport) {
+          localStorage.setItem('email', popupEmail.value);
+        }
+      }
+    });
+
+    window.addEventListener('keydown', function (evt) {
+      if (evt.key === 'Escape' || evt.key === 'Esc') {
+        if (popupLogin.classList.contains('popup-login--open')) {
+          evt.preventDefault();
+          popupLogin.classList.remove('popup-login--open');
+
+          if (header.classList.contains('page-header--close-menu')) {
+            body.classList.remove('page--no-scroll');
+          }
+        }
+      }
+    });
+
+    popupLogin.addEventListener('click', function (evt) {
+      if (evt.target !== popupBox) {
+        popupLogin.classList.remove('popup-login--open');
+
+        if (header.classList.contains('page-header--close-menu')) {
+          body.classList.remove('page--no-scroll');
+        }
+      }
+    });
+
+    popupBox.addEventListener('click', function (evt) {
+      evt.stopPropagation();
+    });
+  }
+
   // filter
 
   var filter = document.querySelector('.filter');
