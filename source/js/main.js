@@ -225,3 +225,62 @@
     }
   }
 })();
+
+(function () {
+  var slider = document.querySelector('.swiper-container');
+
+  if (slider) {
+    // eslint-disable-next-line no-new
+    // eslint-disable-next-line no-undef
+    var swiper = new Swiper('.swiper-container', {
+      spaceBetween: 30,
+      loop: true,
+      breakpoints: {
+        320: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'fraction',
+            renderFraction: function (currentClass, totalClass) {
+              return '<span class="' + currentClass + '"></span>' + ' of ' + '<span class="' + totalClass + '"></span>';
+            },
+          },
+        },
+        768: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true,
+            renderBullet: function (index, className) {
+              return '<span class="' + className + '">' + (index + 1) + '</span>';
+            },
+          },
+        },
+        1024: {
+          slidesPerView: 4,
+          slidesPerGroup: 4,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true,
+            renderBullet: function (index, className) {
+              return '<span class="' + className + '">' + (index + 1) + '</span>';
+            },
+          },
+        },
+      },
+    });
+    swiper.slideNext();
+  }
+}());
