@@ -9,76 +9,78 @@
   var navigation = header.querySelector('.navigation');
   var loginLink = navigation.querySelector('.navigation__link--login');
 
-  header.classList.add('header--menu-closed');
-  menuToggle.classList.add('header__menu-toggle--closed');
-  navigation.classList.add('navigation--closed');
+  if (page !== null && header !== null && menuToggle !== null && navigation !== null && loginLink !== null) {
+    header.classList.add('header--menu-closed');
+    menuToggle.classList.add('header__menu-toggle--closed');
+    navigation.classList.add('navigation--closed');
 
-  var closeMenu = function () {
-    if (header.classList.contains('header--menu-opened')) {
-      page.classList.remove('page--no-scroll');
-      header.classList.remove('header--menu-opened');
-      header.classList.add('header--menu-closed');
-      menuToggle.classList.remove('header__menu-toggle--opened');
-      menuToggle.classList.add('header__menu-toggle--closed');
-      navigation.classList.remove('navigation--opened');
-      navigation.classList.add('navigation--closed');
+    var closeMenu = function () {
+      if (header.classList.contains('header--menu-opened')) {
+        page.classList.remove('page--no-scroll');
+        header.classList.remove('header--menu-opened');
+        header.classList.add('header--menu-closed');
+        menuToggle.classList.remove('header__menu-toggle--opened');
+        menuToggle.classList.add('header__menu-toggle--closed');
+        navigation.classList.remove('navigation--opened');
+        navigation.classList.add('navigation--closed');
 
-      header.removeEventListener('click', onNavigationClick);
-      loginLink.removeEventListener('focusout', onLoginLinkFocusout);
-      document.removeEventListener('keydown', onOpenMenuEscPress);
-    }
-  };
+        header.removeEventListener('click', onNavigationClick);
+        loginLink.removeEventListener('focusout', onLoginLinkFocusout);
+        document.removeEventListener('keydown', onOpenMenuEscPress);
+      }
+    };
 
-  var openMenu = function () {
-    if (header.classList.contains('header--menu-closed')) {
-      page.classList.add('page--no-scroll');
-      header.classList.add('header--menu-opened');
-      header.classList.remove('header--menu-closed');
-      menuToggle.classList.add('header__menu-toggle--opened');
-      menuToggle.classList.remove('header__menu-toggle--closed');
-      navigation.classList.add('navigation--opened');
-      navigation.classList.remove('navigation--closed');
+    var openMenu = function () {
+      if (header.classList.contains('header--menu-closed')) {
+        page.classList.add('page--no-scroll');
+        header.classList.add('header--menu-opened');
+        header.classList.remove('header--menu-closed');
+        menuToggle.classList.add('header__menu-toggle--opened');
+        menuToggle.classList.remove('header__menu-toggle--closed');
+        navigation.classList.add('navigation--opened');
+        navigation.classList.remove('navigation--closed');
 
-      header.addEventListener('click', onNavigationClick);
-      loginLink.addEventListener('focusout', onLoginLinkFocusout);
-      document.addEventListener('keydown', onOpenMenuEscPress);
-    }
-  };
+        header.addEventListener('click', onNavigationClick);
+        loginLink.addEventListener('focusout', onLoginLinkFocusout);
+        document.addEventListener('keydown', onOpenMenuEscPress);
+      }
+    };
 
-  var onOpenMenuEscPress = function (evt) {
-    if (evt.key === 'Escape') {
-      evt.preventDefault();
-      closeMenu();
-    }
-  };
+    var onOpenMenuEscPress = function (evt) {
+      if (evt.key === 'Escape') {
+        evt.preventDefault();
+        closeMenu();
+      }
+    };
 
-  var onToggleMenuClick = function () {
-    if (header.classList.contains('header--menu-opened')) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
-  };
+    var onToggleMenuClick = function () {
+      if (header.classList.contains('header--menu-opened')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    };
 
-  var onFocusCange = function () {
-    if (!document.activeElement.closest('.header')) {
-      menuToggle.focus();
-    }
+    var onFocusCange = function () {
+      if (!document.activeElement.closest('.header')) {
+        menuToggle.focus();
+      }
 
-    document.removeEventListener('focusin', onFocusCange);
-  };
+      document.removeEventListener('focusin', onFocusCange);
+    };
 
-  var onLoginLinkFocusout = function () {
-    document.addEventListener('focusin', onFocusCange);
-  };
+    var onLoginLinkFocusout = function () {
+      document.addEventListener('focusin', onFocusCange);
+    };
 
-  var onNavigationClick = function (evt) {
-    if ((evt.target.closest('a[href]') || evt.target.closest('.header')) && evt.target !== menuToggle) {
-      closeMenu();
-    }
-  };
+    var onNavigationClick = function (evt) {
+      if ((evt.target.closest('a[href]') || evt.target.closest('.header')) && evt.target !== menuToggle) {
+        closeMenu();
+      }
+    };
 
-  menuToggle.addEventListener('click', onToggleMenuClick);
+    menuToggle.addEventListener('click', onToggleMenuClick);
+  }
 
   // popup login
 
@@ -229,62 +231,112 @@
 // (function () {
 //   var slider = document.querySelector('.swiper-container');
 
-//   var mySwiper = new Swiper(slider, {
-//     slidesPerView: 3,
+//   if (slider) {
+//     // eslint-disable-next-line no-new
+//     // eslint-disable-next-line no-undef
+//     var swiper = new Swiper('.swiper-container', {
+//       spaceBetween: 30,
+//       loop: true,
+//       breakpoints: {
+//         320: {
+//           slidesPerView: 2,
+//           slidesPerGroup: 2,
+//           pagination: {
+//             el: '.swiper-pagination',
+//             type: 'fraction',
+//             renderFraction: function (currentClass, totalClass) {
+//               return '<span class="' + currentClass + '"></span>' + ' of ' + '<span class="' + totalClass + '"></span>';
+//             },
+//           },
+//         },
+//         768: {
+//           slidesPerView: 2,
+//           slidesPerGroup: 2,
+//           navigation: {
+//             nextEl: '.swiper-button-next',
+//             prevEl: '.swiper-button-prev',
+//           },
+//           pagination: {
+//             el: '.swiper-pagination',
+//             type: 'bullets',
+//             clickable: true,
+//             renderBullet: function (index, className) {
+//               return '<span class="' + className + '">' + (index + 1) + '</span>';
+//             },
+//           },
+//         },
+//         1024: {
+//           slidesPerView: 4,
+//           slidesPerGroup: 4,
+//           navigation: {
+//             nextEl: '.swiper-button-next',
+//             prevEl: '.swiper-button-prev',
+//           },
+//           pagination: {
+//             el: '.swiper-pagination',
+//             type: 'bullets',
+//             clickable: true,
+//             renderBullet: function (index, className) {
+//               return '<span class="' + className + '">' + (index + 1) + '</span>';
+//             },
+//           },
+//         },
+//       },
+//     });
+//     swiper.slideNext();
 //   }
-// })();
-
+// }());
 
 (function () {
-  var slider = document.querySelector('.swiper-container');
+  var sliderContainer = document.querySelector('.swiper-container');
 
-  if (slider) {
+  if (sliderContainer) {
     // eslint-disable-next-line no-new
     // eslint-disable-next-line no-undef
     var swiper = new Swiper('.swiper-container', {
       slidesPerView: 2,
       spaceBetween: 30,
-      // slidesPerGroup: 2,
-      // loop: true,
-      // simulateTouch: false,
-      // breakpoints: {
-      //   0: {
-      //     pagination: {
-      //       el: '.new__item-count',
-      //       clickable: true,
-      //       type: 'custom',
-      //       renderCustom: function (Swiper, current, total) {
-      //         return current + ' of ' + total;
-      //       },
-      //     },
-      //   },
-      //   768: {
-      //     slidesPerView: 2,
-      //     slidesPerGroup: 2,
-      //     pagination: {
-      //       el: '.new__item-count',
-      //       clickable: true,
-      //       renderBullet: function (index, className) {
-      //         return '<button class="' + className + '" aria-label="Slide ' + (index + 1) + '">' + (index + 1) + '</button>';
-      //       },
-      //     },
-      //   },
-      //   1024: {
-      //     slidesPerView: 4,
-      //     slidesPerGroup: 4,
-      //     pagination: {
-      //       el: '.new__item-count',
-      //       clickable: true,
-      //       renderBullet: function (index, className) {
-      //         return '<button class="' + className + '" aria-label="Slide ' + (index + 1) + '">' + (index + 1) + '</button>';
-      //       },
-      //     },
-      //   },
-      // },
-      // navigation: {
-      //   nextEl: '.new__item-next-button',
-      //   prevEl: '.new__item-prev-button',
-      // },
+      slidesPerGroup: 2,
+      loop: true,
+      simulateTouch: false,
+      breakpoints: {
+        0: {
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            type: 'custom',
+            renderCustom: function (Swiper, current, total) {
+              return current + ' of ' + total;
+            },
+          },
+        },
+        768: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            renderBullet: function (index, className) {
+              return '<button class="' + className + '" aria-label="Slide ' + (index + 1) + '">' + (index + 1) + '</button>';
+            },
+          },
+        },
+        1024: {
+          slidesPerView: 4,
+          slidesPerGroup: 4,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            renderBullet: function (index, className) {
+              return '<button class="' + className + '" aria-label="Slide ' + (index + 1) + '">' + (index + 1) + '</button>';
+            },
+          },
+        },
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
     });
     swiper.slideNext();
   }
